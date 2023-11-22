@@ -18,8 +18,8 @@ platform_object_gap = 10
 def converting_distance_to_coordinates(data):
     data_x = []
     data_y = []
-    
-    for i in range(int(total_rotation_angle / platform_rotation_angle)):
+    print(len(data))
+    for i in range(len(data)):
       index_distance = (data[i] - diametre_platform / 2 - platform_object_gap)
       
       engle = i * platform_rotation_angle
