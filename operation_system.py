@@ -16,18 +16,19 @@ platform_object_gap = 10
 
 
 def converting_distance_to_coordinates(data):
-  data_x = []
-  data_y = []
-  
-  for i in range(int(total_rotation_angle / platform_rotation_angle)):
+    data_x = []
+    data_y = []
+    
+    for i in range(int(total_rotation_angle / platform_rotation_angle)):
       index_distance = (data[i] - diametre_platform / 2 - platform_object_gap)
       
       engle = i * platform_rotation_angle
       engle_sin = np.sin(engle * np.pi / 180. )
       engle_cos = np.cos(engle * np.pi / 180. )
-  
+    
       data_y.append(index_distance * engle_sin)
       data_x.append(index_distance * engle_cos)
+    return data_x, data_y
 
 
 def interpolate_data(data, scale_ratio=4, kind=2):
